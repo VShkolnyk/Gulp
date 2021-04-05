@@ -1,0 +1,39 @@
+@import "mixins";
+
+%step {
+  width: 300px;
+  height: 400px;
+  color: white;
+}
+
+%button {
+  color: white;
+  background-color: #FF4E50;
+  border-radius: 40px;
+  border: none;
+}
+
+%holiday {
+  position: relative;
+  width: 300px;
+  height: 310px;
+  margin: 10px;
+  text-align: center;
+  @include flex (flex, center, center);
+  border-radius: 4px;
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+
+

@@ -1,0 +1,733 @@
+@import "base/fonts";
+@import "base/base";
+@import "base/mixins";
+@import "base/variables";
+
+body {
+  font-family: "Montserrat";
+}
+
+h1, h2, h3, h4 {
+  font-family: "Montserrat Bold";
+}
+
+h2 {
+  text-align: center;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  font-family: "Roboto Light";
+}
+
+header {
+  background: url("images/Background.png") no-repeat center center;
+  background-size: cover;
+  width: 1440px;
+  height: 700px;
+  margin: 0 auto;
+
+  .dreamshare {
+    padding: 41px 250px;
+    @include flex(flex, space-between, center);
+
+    h3 {
+      font-size: 20px;
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      div {
+        width: 90px;
+        height: 36px;
+        border: 2px solid white;
+        border-radius: 40px;
+        @include flex(flex, center, center);
+        margin: 0 40px 0 20px;
+      }
+    }
+
+  }
+
+  .centerText {
+    @include flex(flex, center, center);
+    flex-direction: column;
+    text-align: center;
+    margin-top: 106px;
+
+    h1 {
+      font-size: 52px;
+      color: white;
+      width: 470px;
+      line-height: 63px;
+    }
+
+    p {
+      font-size: 24px;
+      color: white;
+      margin: 27px 0 36px;
+    }
+
+    button {
+      width: 225px;
+      height: 40px;
+      @extend %button;
+    }
+  }
+}
+
+main {
+  width: 1440px;
+  margin: 0 auto;
+
+  .firstSection {
+    width: 100%;
+
+    &__images {
+      @include flex(flex, center, center);
+
+      &_step1 {
+        background: url("images/Step 1 image.png") no-repeat;
+        background-size: cover;
+        @extend %step;
+        padding: 218px 30px 19px 23px;
+      }
+
+      &_step2 {
+        background: url("images/Step 2.png") no-repeat;
+        background-size: cover;
+        @extend %step;
+        margin: 0 20px 0;
+        padding: 250px 30px 15px 25px;
+
+        p {
+          margin-top: -6px;
+        }
+      }
+
+      &_step3 {
+        background: url("images/Step 3 image.png") no-repeat;
+        background-size: cover;
+        @extend %step;
+        padding: 218px 30px 19px 23px;
+      }
+
+      button {
+        @extend %button;
+        width: 70px;
+        height: 20px;
+        font-size: 10px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 26px;
+        margin: 22px 0 25px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 14px;
+        color: #E3E3E3;
+      }
+    }
+
+    h2 {
+      margin: 90px 0 35px;
+    }
+  }
+
+  .secondSection {
+    width: 100%;
+    @include flex(flex, center, center);
+    flex-direction: column;
+
+    &__partner {
+      @include flex(flex, space-between, baseline);
+      width: 940px;
+
+      figure {
+        width: 221px;
+        height: 224px;
+        @include flex(flex, space-between, center);
+        flex-direction: column;
+        text-align: center;
+
+        h4 {
+          font-size: 14px;
+        }
+
+        figcaption {
+          font-size: 14px;
+          font-family: "Roboto Light";
+        }
+      }
+
+      &_first {
+        figcaption {
+          margin: 0 0 18px;
+        }
+      }
+
+      &_second {
+        figcaption {
+          margin: 0 0 18px;
+        }
+      }
+    }
+
+    h2 {
+      margin: 90px 0 32px;
+    }
+
+    button {
+      color: #FF4E50;
+      border: 2px solid #FF4E50;
+      background-color: white;
+      width: 180px;
+      height: 40px;
+      border-radius: 40px;
+      font-size: 14px;
+      margin-top: 37px;
+      font-family: "Montserrat Bold";
+    }
+  }
+
+  .thirdSection {
+    width: 100%;
+    @include flex(flex, center, center);
+    flex-direction: column;
+
+    &__holiday {
+      @include flex(flex, space-between, center);
+      flex-wrap: wrap;
+      width: 960px;
+
+      &_sport {
+        background: url("images/sport.png") no-repeat center center;
+        background-size: cover;
+        @extend %holiday;
+      }
+
+      &_health {
+        background: url("images/health.png") no-repeat center center;
+        background-size: cover;
+        @extend %holiday;
+      }
+
+      &_extreme {
+        background: url("images/extreme.png") no-repeat center center;
+        background-size: cover;
+        @extend %holiday;
+        padding: 50px;
+        line-height: 27px;
+      }
+
+      &_game {
+        background: url("images/games.png") no-repeat center center;
+        background-size: cover;
+        @extend %holiday;
+      }
+
+      &_culture {
+        background: url("images/culture1.png") no-repeat center center;
+        background-size: cover;
+        @extend %holiday;
+        width: 620px;
+        animation-name: change;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes change {
+        0% {
+          background-image: url("images/culture1.png")
+        }
+        50% {
+          background-image: url("images/culture2.png");
+        }
+        100% {
+          background-image: url("images/culture3.png");
+        }
+      }
+
+      &_relax {
+        background: url("images/relaxation.png") no-repeat;
+        background-size: cover;
+        @extend %holiday;
+        width: 620px;
+      }
+
+      &_travel {
+        background: url("images/traveling.png") no-repeat;
+        background-size: cover;
+        @extend %holiday;
+      }
+
+      h3 {
+        font-size: 22px;
+        z-index: 2;
+      }
+    }
+
+    h2 {
+      margin: 90px 0 24px;
+    }
+  }
+
+  .fourthSection {
+    width: 100%;
+    @include flex(flex, center, center);
+    flex-direction: column;
+
+    h2 {
+      margin: 79px 0 52px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    form {
+      width: 482px;
+      height: 40px;
+      margin-bottom: 93px;
+
+      input {
+        width: 299px;
+        height: 40px;
+        border: 1px solid #D4D4D4;
+        border-radius: 3px;
+        margin-right: 5px;
+      }
+
+      button {
+        @extend %button;
+        width: 172px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+footer {
+  width: 1440px;
+  margin: 0 auto;
+  @include flex(flex, center, center);
+  flex-direction: column;
+
+  hr {
+    height: 2px;
+    width: 100%;
+    background-color: #FF4E50;
+    margin-bottom: 30px;
+    border: none;
+  }
+
+  .footer {
+    @include flex(flex, space-around, flex-start);
+    margin-bottom: 30px;
+
+    &__about {
+      width: 542px;
+      @include flex(flex, space-between, baseline);
+
+      p {
+        color: #FF4E50;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+      }
+
+      li {
+        line-height: 26px;
+        font-size: 14px;
+        font-family: "Roboto Light";
+        color: #999999;
+      }
+
+      h4 {
+        font-size: 14px;
+        line-height: 37px;
+      }
+    }
+
+    &__logo {
+      width: 397px;
+      height: 50px;
+      @include flex(flex, space-between, flex-end);
+      flex-direction: column;
+
+      span {
+        font-size: 10px;
+        font-family: "Montserrat Bold";
+        letter-spacing: 1px;
+        color: #CCCCCC;
+        margin-top: 8px;
+      }
+
+      div {
+        background: url("images/Bitmap.png");
+        width: 110px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  h2 {
+    font-size: 22px;
+  }
+  header {
+    width: 768px;
+
+    .dreamshare {
+      padding: 41px 50px;
+
+      li {
+        div {
+          margin: 0 0 0 20px;
+        }
+      }
+    }
+  }
+  main {
+    width: 768px;
+
+    .firstSection__images {
+      h3 {
+        line-height: 16px;
+        margin: 43px 0 26px
+      }
+
+      &_step1 {
+        width: 236px;
+        padding: 205px 25px 16px 19px;
+      }
+
+      &_step2 {
+        width: 236px;
+        padding: 253px 26px 0px 20px;
+
+        h3 {
+          margin: 15px 0 26px
+        }
+      }
+
+      &_step3 {
+        width: 236px;
+        padding: 205px 25px 16px 19px;
+      }
+    }
+
+    .secondSection {
+      &__partner {
+        flex-wrap: wrap;
+        width: 475px;
+
+        &_first {
+          order: -2;
+          margin-bottom: 33px;
+        }
+
+        &_third {
+          order: -1;
+        }
+      }
+
+      button {
+        margin-top: 25px;
+      }
+    }
+
+    .thirdSection {
+      &__holiday {
+        width: 100%;
+
+        &_sport {
+          width: 236px;
+        }
+
+        &_health {
+          width: 236px;
+        }
+
+        &_extreme {
+          width: 236px;
+          padding: 10px;
+        }
+
+        &_game {
+          width: 236px;
+        }
+
+        &_culture {
+          width: 492px;
+        }
+
+        &_relax {
+          width: 492px;
+        }
+
+        &_travel {
+          width: 236px;
+        }
+      }
+    }
+  }
+  footer {
+    width: 768px;
+
+    hr {
+      margin-bottom: 27px;
+    }
+
+    .footer {
+      &__about {
+        width: 509px;
+        justify-content: space-evenly;
+
+        p {
+          position: relative;
+          left: -56px;
+        }
+      }
+
+      &__logo {
+        width: 176px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    width: 320px;
+    height: 540px;
+
+    .dreamshare {
+      padding: 20px 50px;
+      flex-direction: column-reverse;
+      height: 195px;
+    }
+
+    .centerText {
+      margin-top: 9px;
+
+      h1 {
+        font-size: 30px;
+        width: 300px;
+        line-height: 36px;
+      }
+
+      p {
+        font-size: 18px;
+        width: 250px;
+        margin: 10px 0 25px;
+      }
+
+      button {
+        width: 280px;
+      }
+    }
+  }
+  main {
+    width: 320px;
+
+    .firstSection {
+      h2 {
+        margin: 32px 0 12px;
+      }
+
+      &__images {
+        flex-direction: column;
+
+        &_step1 {
+          width: 300px;
+          height: 240px;
+          background: url("images/Step 1-1.png");
+          padding: 64px 25px 16px 19px;
+        }
+
+        &_step2 {
+          width: 300px;
+          height: 240px;
+          background: url("images/Step 2-2.png");
+          padding: 95px 30px 16px 19px;
+          margin: 10px 0 10px;
+
+          h3 {
+            margin: 31px 0 26px;
+          }
+        }
+
+        &_step3 {
+          width: 300px;
+          height: 240px;
+          background: url("images/Step 3-3.png");
+          padding: 64px 25px 16px 19px;
+        }
+      }
+    }
+
+    .secondSection {
+      h2 {
+        line-height: 27px;
+        margin: 35px 0 15px;
+      }
+
+      &__partner {
+        width: 236px;
+
+        figure {
+          width: 236px;
+        }
+
+        &_first {
+          margin-bottom: -3px;
+        }
+
+        &_third {
+          margin-bottom: 14px;
+        }
+
+        &_fourth {
+          figcaption {
+            margin: 0 0 18px;
+          }
+        }
+      }
+
+      button {
+        margin-top: 15px;
+        width: 280px;
+      }
+    }
+
+    .thirdSection {
+      h2 {
+        margin: 35px 27px 29px;
+        line-height: 27px;
+      }
+
+      &__holiday {
+        width: 100%;
+
+        &_sport {
+          width: 300px;
+          height: 120px;
+          padding: 10px 50px;
+          background: url("images/sport2.png");
+          margin: 5px 10px;
+        }
+
+        &_health {
+          width: 300px;
+          height: 120px;
+          padding: 10px 40px;
+          background: url("images/health2.png");
+          margin: 5px 10px;
+        }
+
+        &_extreme {
+          width: 300px;
+          height: 120px;
+          padding: 10px 40px;
+          background: url("images/extreme2.png");
+          margin: 5px 10px;
+        }
+
+        &_game {
+          width: 300px;
+          height: 120px;
+          background: url("images/game2.png");
+          margin: 5px 10px;
+        }
+
+        &_culture {
+          width: 300px;
+          height: 120px;
+          margin: 5px 10px;
+        }
+
+        &_relax {
+          width: 300px;
+          height: 120px;
+          margin: 5px 10px;
+        }
+
+        &_travel {
+          width: 300px;
+          height: 120px;
+          background: url("images/travelling2.png");
+          margin: 5px 10px;
+        }
+      }
+    }
+    .fourthSection {
+      h2 {
+        margin: 30px 27px 16px;
+        line-height: 27px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      form {
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        input {
+          width: 280px;
+          margin-bottom: 10px;
+        }
+        button {
+          width: 280px;
+        }
+      }
+    }
+  }
+  footer {
+    width: 320px;
+    hr {
+      margin-bottom: 10px;
+    }
+    .footer {
+      flex-direction: column;
+      text-align: center;
+      &__about {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 130px;
+        p {
+          left: 0;
+        }
+        ul {
+          width: 200px;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+      }
+      &__logo {
+        width: 200px;
+        align-items: center;
+      }
+    }
+  }
+}
